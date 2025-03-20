@@ -1,0 +1,7 @@
+:root {
+    --color-base-content: hsl(0, 13%, 17%);
+    --color-base-content-hover: hsl(39, 40%, 20%);
+    --color-accent: hsl(39, 86%, 51%);
+
+    --container-laptop: 1500px;
+}

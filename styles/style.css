@@ -1,0 +1,317 @@
+* {
+    /* TODO Обсудить с Лизой */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.btn {
+    background: #E52626;
+    font-family: 'Montserrat';
+    color: #FFF;
+    font-size: 24px;
+    border-radius: 999px;
+    padding: 0.75em;
+    line-height: 1;
+    transition: background .1s ease-in-out;
+
+    &:hover {
+        background-color: hsl(0, 79%, 20%);
+    }
+
+    @media (width <=1500px) {
+        font-size: 20px;
+    }
+
+    /* @media (width <=px) {
+        font-size: 20px;
+    } */
+
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+    color: var(--color-base-content);
+}
+
+.container {
+    max-width: 1500px;
+    padding-inline: 32px;
+    margin-inline: auto;
+
+    @media (width <=1500px) {
+        max-width: 1200px;
+    }
+
+}
+
+header {
+    padding-block: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+
+    @media (width <=1500px) {
+        padding-block: 30px;
+    }
+
+
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        height: 53px;
+
+        @media (width <=1500px) {
+            height: 47px;
+        }
+    }
+
+    & .cart {
+        --size: 70px;
+        background: var(--color-base-content);
+        color: #FFFFFF;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        border: none;
+        transition: background .3s ease-in-out;
+
+        @media (width <=1500px) {
+            --size: 60px;
+        }
+
+        @media (width < 1024px) {
+            display: none;
+        }
+
+        &:hover {
+            background: var(--color-base-content-hover);
+        }
+
+        & svg {
+            width: calc(var(--size) / 2);
+            height: calc(var(--size) / 2);
+        }
+    }
+
+    .burger {
+        font-size: 50px;
+
+        @media (width >=1024px) {
+            display: none;
+        }
+    }
+
+    & nav {
+        font-size: 25px;
+        display: flex;
+        gap: 85px;
+
+        @media (width <=1500px) {
+            font-size: 22px;
+            gap: 80px;
+        }
+
+        @media (width < 1024px) {
+            display: none;
+        }
+
+        & a {
+            color: inherit;
+            text-decoration: inherit;
+
+            &.active {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+section.hero {
+    background: linear-gradient(to top, #EDA41800, #EDA418);
+
+    & .container {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-block: 150px 80px;
+
+        @media (orientation: landscape) {
+            height: 100svh;
+        }
+
+        @media (width >=768px) {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    & h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 0.5em;
+
+        @media (width <=1500px) {
+            font-size: 28px;
+            font-weight: 800;
+        }
+    }
+
+    & .cta {
+        & .btn {
+            margin-top: 40px;
+        }
+    }
+
+    & .product {
+        --height: 600px;
+        height: var(--height);
+
+        @media (width <=1500px) {
+            --height: 400px;
+        }
+
+        @media (width < 1024px) {
+            --height: 300px
+        }
+    }
+}
+
+section.menu {
+    padding-block: 50px;
+
+    & h2 {
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 0.9em;
+
+        @media (width <=1500px) {
+            font-size: 40px;
+        }
+    }
+
+    & .cards {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+
+        @media (width <=1500px) {
+            gap: 25px;
+        }
+
+        @media (width <768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    & .product-card {
+        position: relative;
+
+        & h3 {
+            text-align: center;
+            font-size: 35px;
+            font-weight: 500;
+            margin-top: 0.6em;
+
+            @media (width <=1500px) {
+                font-size: 25px;
+            }
+        }
+
+        &>a {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+        }
+
+        & img {
+            border-radius: 50px;
+            aspect-ratio: 5/3;
+
+            @media (width <=1500px) {
+                border-radius: 30px;
+            }
+        }
+    }
+}
+
+footer {
+    background: linear-gradient(#D9D9D900, #EDA61D);
+    padding-block: 160px 75px;
+
+    & nav {
+        font-size: 24px;
+        display: flex;
+        gap: 101px;
+        justify-content: center;
+        margin-bottom: 45px;
+
+        @media (width <=1100px) {
+            gap: 10px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        & a {
+            color: inherit;
+            text-decoration: inherit;
+
+            &.active {
+                font-weight: 700;
+            }
+        }
+    }
+
+    & .company {
+        font-size: 24px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    & .copyright {
+        font-size: 24px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-link {
+        color: var(--color-base-content);
+        font-size: 50px;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: hsl(0, 13%, 25%);
+        }
+    }
+}
