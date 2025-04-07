@@ -118,6 +118,10 @@ header {
     .burger {
         font-size: 50px;
 
+        &.hidden {
+            opacity: 0;
+        }
+
         @media (width >=1024px) {
             display: none;
         }
@@ -313,5 +317,51 @@ footer {
         &:hover {
             color: hsl(0, 13%, 25%);
         }
+    }
+}
+
+#mobile-menu {
+    translate: 100%;
+    transition: translate 0.3s ease-in-out;
+
+    border: 1px solid rgba(255, 255, 255, 0.562);
+    background: color-mix(in srgb, var(--color-accent), transparent 50%);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    padding: 40px;
+    padding-bottom: 60px;
+
+
+    &.open {
+        translate: 0;
+    }
+
+
+
+
+    & nav {
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+        margin-top: 20px;
+        align-items: end;
+
+        & a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 5vh;
+        }
+    }
+
+    & .header {
+        display: flex;
+        justify-content: end;
+    }
+
+    & .close {
+        font-size: 50px;
     }
 }
